@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=GitHub Desktop
+Comment=Simple collaboration from your desktop
+Icon=__HOME__/.local/share/icons/MacOS-Like-Dark/apps/scalable/github-desktop.svg
+TryExec=__HOME__/AppImages/github_desktop.appimage
+Exec=env DESKTOPINTEGRATION=1 __HOME__/AppImages/github_desktop.appimage --no-sandbox %U
+Terminal=false
+MimeType=x-scheme-handler/x-github-client;x-scheme-handler/x-github-desktop-auth;x-scheme-handler/x-github-desktop-dev-auth;
+Categories=GNOME;GTK;Development;
+StartupWMClass=GitHub Desktop
+X-AppImage-Version=3.4.13-linux1
+X-AppImage-Name=GitHub Desktop

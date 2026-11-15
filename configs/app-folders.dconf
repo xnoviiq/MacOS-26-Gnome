@@ -1,0 +1,44 @@
+[/]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus', '8a68be5f-8477-4a0c-838a-e38e25f9994a', '100791b3-0a46-4cb2-a20b-7f6cec1a51ab', '892556dc-fad2-4e4b-af5d-e1aa3fc971c5', 'ae127b1b-0a8b-4947-93b5-a3471701282d', 'a9ed51f2-8c39-4317-9c99-b9d6746a72e4']
+
+[folders/100791b3-0a46-4cb2-a20b-7f6cec1a51ab]
+apps=['org.gnome.Calculator.desktop', 'org.gnome.Snapshot.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Showtime.desktop', 'org.gnome.clocks.desktop', 'net.nokyan.Resources.desktop', 'desktop-security-center_desktop-security-center.desktop', 'org.gnome.Shotwell.desktop', 'firmware-updater_firmware-updater.desktop', 'gnome-language-selector.desktop']
+name='UseLess'
+translate=false
+
+[folders/892556dc-fad2-4e4b-af5d-e1aa3fc971c5]
+apps=['update-manager.desktop', 'snap-store_snap-store.desktop', 'usb-creator-gtk.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.GTK4ThemeSwitcher.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Yelp.desktop', 'display-im7.q16.desktop', 'gearlever.desktop', 'motrix-appimage.desktop']
+name='System'
+
+[folders/8a68be5f-8477-4a0c-838a-e38e25f9994a]
+apps=['libreoffice-startcenter.desktop', 'libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-writer.desktop', 'org.gnome.Papers.desktop', 'libreoffice-math.desktop']
+name='Office'
+
+[folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[folders/System]
+apps=['nm-connection-editor.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'im-config.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.Characters.desktop', 'simple-scan.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+
+[folders/Utilities]
+apps=['org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.seahorse.Application.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+translate=true
+
+[folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[folders/a9ed51f2-8c39-4317-9c99-b9d6746a72e4]
+apps=['global-menu-hud.desktop', 'fildem-hud.desktop']
+name='Unnamed Folder'
+
+[folders/ae127b1b-0a8b-4947-93b5-a3471701282d]
+apps=['Waydroid.desktop', 'waydroid.com.google.android.contacts.desktop', 'waydroid.com.instagram.android.desktop', 'waydroid.com.google.android.apps.messaging.desktop', 'waydroid.com.android.vending.desktop', 'instagram-native.desktop']
+name='WayDroid'
+translate=false

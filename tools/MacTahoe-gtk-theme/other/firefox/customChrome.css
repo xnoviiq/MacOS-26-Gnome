@@ -1,0 +1,19 @@
+/* Transparent Firefox toolbar */
+#navigator-toolbox,
+#nav-bar,
+#titlebar,
+#TabsToolbar,
+#toolbar-menubar,
+#PersonalToolbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Remove toolbar border */
+#navigator-toolbox {
+    border-bottom: none !important;
+}
+
+/* Add your own custom styles here */
+

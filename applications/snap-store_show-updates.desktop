@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-SnapInstanceName=snap-store
+Type=Application
+Version=1.0
+X-SnapAppName=show-updates
+Exec=/snap/bin/snap-store.show-updates --updates %U
+Icon=apple-app-store
+Terminal=false
+Categories=System;Utility;PackageManager;SoftwareManagement;Network;Settings;
+Keywords=Ubuntu;Applications;Apps;Store;Software;Snaps;
+Name=App Center Updates
+NoDisplay=true
+

@@ -1,0 +1,16 @@
+user-theme@gnome-shell-extensions.gcampax.github.com
+dash2dock-lite@icedman.github.com
+spotlight@nin
+blur-my-shell@aunetx
+compiz-alike-magic-lamp-effect@hermes83.github.com
+just-perfection-desktop@just-perfection
+appindicatorsupport@rgcjonas.gmail.com
+globalmenu@ShiroOSL.github.io
+rounded-windows@marcosgt.github.io
+disable-unredirect@exeos
+liquidglass-widgets@local
+global-menu@unmade.space
+snapd-prompting@canonical.com
+snapd-search-provider@canonical.com
+ubuntu-appindicators@ubuntu.com
+web-search-provider@ubuntu.com

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Motrix
+GenericName=Download Manager
+Comment=Full-featured download manager
+Exec=__HOME__/AppImages/motrix.appimage %U
+Icon=__HOME__/.local/share/icons/MacOS-Like-Dark/apps/64/motrix-appimage.png
+Terminal=false
+Categories=Network;FileTransfer;
+Keywords=download;bittorrent;magnet;aria2;
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;x-scheme-handler/motrix;
+StartupWMClass=Motrix
+StartupNotify=true
+X-Motrix-Integration=appimage
+X-Motrix-Integration-Id=ce77db61-5933-4566-8128-4429017a3c3c

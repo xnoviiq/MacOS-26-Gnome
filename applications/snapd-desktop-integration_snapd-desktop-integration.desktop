@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SnapInstanceName=snapd-desktop-integration
+Icon=apple-app-store
+Name=App Updates
+X-SnapAppName=snapd-desktop-integration
+Exec=/usr/bin/false
+Type=Application
+NoDisplay=true
+

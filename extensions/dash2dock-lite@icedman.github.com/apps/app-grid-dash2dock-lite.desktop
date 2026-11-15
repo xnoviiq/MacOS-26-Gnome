@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Downloads
+Exec=nautilus /usr/share/applications
+Icon=/home/xnoviq/.config/d2da/icons/macos-dark-launchpad-1794660150.svg
+StartupWMClass=app-grid-dash2dock-lite

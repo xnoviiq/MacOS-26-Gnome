@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Yapfast
+GenericName=Chat
+Comment=Chat and voice for Matrix and Discord
+TryExec=__HOME__/Downloads/Yapfast-0.3.0-x86_64.AppImage
+Exec=__HOME__/Downloads/Yapfast-0.3.0-x86_64.AppImage --open-link %u
+Icon=__HOME__/.local/share/icons/MacOS-Like-Dark/apps/scalable/github-desktop.svg
+Terminal=false
+Categories=Network;InstantMessaging;Chat;
+MimeType=x-scheme-handler/yapfast;
+Keywords=Matrix;Discord;Voice;
+StartupWMClass=io.github.yapfast.Yapfast

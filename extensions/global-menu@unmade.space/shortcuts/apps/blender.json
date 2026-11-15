@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "app": "blender",
+  "name": "Blender",
+  "identifiers": [
+    "blender.desktop",
+    "org.blender.Blender.desktop",
+    "blender",
+    "Blender"
+  ],
+  "menus": [
+    {
+      "label": "File",
+      "items": [
+        {"label": "New", "shortcut": "<Ctrl>N"},
+        {"label": "Open…", "shortcut": "<Ctrl>O"},
+        {"label": "Open Recent", "shortcut": "<Ctrl><Shift>O"},
+        {"separator": true},
+        {"label": "Save", "shortcut": "<Ctrl>S"},
+        {"label": "Save As…", "shortcut": "<Ctrl><Shift>S"},
+        {"label": "Save Incremental", "shortcut": "<Ctrl><Alt>S"},
+        {"separator": true},
+        {"label": "Quit", "shortcut": "<Ctrl>Q"}
+      ]
+    },
+    {
+      "label": "Edit",
+      "items": [
+        {"label": "Undo", "shortcut": "<Ctrl>Z"},
+        {"label": "Redo", "shortcut": "<Ctrl><Shift>Z"},
+        {"separator": true},
+        {"label": "Adjust Last Operation…", "shortcut": "F9"},
+        {"label": "Repeat Last", "shortcut": "<Shift>R"},
+        {"separator": true},
+        {"label": "Menu Search…", "shortcut": "F3"},
+        {"separator": true},
+        {"label": "Rename Active Item…", "shortcut": "F2"},
+        {"label": "Batch Rename…", "shortcut": "<Ctrl>F2"},
+        {"separator": true},
+        {"label": "Preferences…", "shortcut": "<Ctrl>,"}
+      ]
+    },
+    {
+      "label": "Render",
+      "items": [
+        {"label": "Render Image", "shortcut": "F12"},
+        {"label": "Render Animation", "shortcut": "<Ctrl>F12"},
+        {"separator": true},
+        {"label": "Render Sequencer Image", "shortcut": "<Alt>F12"},
+        {"label": "Render Sequencer Animation", "shortcut": "<Ctrl><Alt>F12"},
+        {"separator": true},
+        {"label": "View Render", "shortcut": "F11"},
+        {"label": "View Animation", "shortcut": "<Ctrl>F11"}
+      ]
+    },
+    {
+      "label": "Window",
+      "items": [
+        {"label": "Next Workspace", "shortcut": "<Ctrl>Page_Down"},
+        {"label": "Previous Workspace", "shortcut": "<Ctrl>Page_Up"}
+      ]
+    },
+    {
+      "label": "Help",
+      "items": [
+        {"label": "Manual", "shortcut": "F1"}
+      ]
+    },
+    {
+      "label": "3D Viewport",
+      "items": [
+        {
+          "label": "Select",
+          "items": [
+            {"label": "Select All", "shortcut": "A"},
+            {"label": "Deselect All", "shortcut": "<Alt>A"},
+            {"label": "Invert Selection", "shortcut": "<Ctrl>I"},
+            {"separator": true},
+            {"label": "Box Select", "shortcut": "B"},
+            {"label": "Circle Select", "shortcut": "C"}
+          ]
+        },
+        {
+          "label": "Transform",
+          "items": [
+            {"label": "Move", "shortcut": "G"},
+            {"label": "Rotate", "shortcut": "R"},
+            {"label": "Scale", "shortcut": "S"}
+          ]
+        },
+        {
+          "label": "Object",
+          "items": [
+            {"label": "Add", "shortcut": "<Shift>A"},
+            {"label": "Apply", "shortcut": "<Ctrl>A"},
+            {"separator": true},
+            {"label": "Duplicate Objects", "shortcut": "<Shift>D"},
+            {"label": "Duplicate Linked", "shortcut": "<Alt>D"},
+            {"label": "Delete", "shortcut": "Delete"},
+            {"separator": true},
+            {"label": "Hide Selected", "shortcut": "H"},
+            {"label": "Hide Unselected", "shortcut": "<Shift>H"},
+            {"label": "Show Hidden Objects", "shortcut": "<Alt>H"},
+            {"separator": true},
+            {"label": "Move to Collection", "shortcut": "M"},
+            {"label": "Link to Collection", "shortcut": "<Shift>M"},
+            {"separator": true},
+            {"label": "Toggle Edit Mode", "shortcut": "Tab"}
+          ]
+        },
+        {
+          "label": "View",
+          "items": [
+            {"label": "Frame Selected", "shortcut": "KP_Decimal"},
+            {"label": "Frame All", "shortcut": "Home"},
+            {"label": "Perspective/Orthographic", "shortcut": "KP_5"},
+            {"separator": true},
+            {"label": "Toggle Toolbar", "shortcut": "T"},
+            {"label": "Toggle Sidebar", "shortcut": "N"},
+            {"separator": true},
+            {"label": "Viewport Shading", "shortcut": "Z"},
+            {"label": "Toggle X-Ray", "shortcut": "<Alt>Z"},
+            {"separator": true},
+            {"label": "Maximize Area", "shortcut": "<Ctrl>space"},
+            {"label": "Focus Mode", "shortcut": "<Ctrl><Alt>space"}
+          ]
+        },
+        {
+          "label": "Animation",
+          "items": [
+            {"label": "Play Animation", "shortcut": "<Shift>space"}
+          ]
+        }
+      ]
+    }
+  ]
+}

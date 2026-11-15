@@ -1,0 +1,7 @@
+.panel-button.globalmenu-logo,
+#panelLeft .panel-button {
+    -natural-hpadding: 6px !important;
+    -minimum-hpadding: 4px !important;
+    padding-left: 6px !important;
+    padding-right: 4px !important;
+}

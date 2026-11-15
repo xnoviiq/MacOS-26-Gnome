@@ -1,0 +1,10 @@
+[Desktop Entry]
+X-SnapInstanceName=prompting-client
+Type=Application
+Version=1.0
+# The Exec line is stripped by snapd, but while valid, snapcraft requires an Exec
+# https://github.com/canonical/snapcraft/issues/5799
+Icon=__HOME__/.local/share/icons/MacOS-Like-Dark/apps/scalable/github-desktop.svg
+Terminal=false
+NoDisplay=true
+Name=Prompting Client

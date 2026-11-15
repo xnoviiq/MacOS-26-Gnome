@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "app": "konsole",
+  "name": "Konsole",
+  "identifiers": [
+    "org.kde.konsole.desktop",
+    "konsole",
+    "Konsole"
+  ],
+  "menus": [
+    {
+      "label": "File",
+      "items": [
+        {"label": "New Tab", "shortcut": "<Ctrl><Shift>T"},
+        {"label": "New Window", "shortcut": "<Ctrl><Shift>N"},
+        {"label": "Close Tab", "shortcut": "<Ctrl><Shift>W"},
+        {"label": "Close Window", "shortcut": "<Ctrl><Shift>Q"},
+        {"label": "Save History As", "shortcut": "<Ctrl><Shift>S"},
+        {"label": "Print", "shortcut": "<Ctrl><Shift>P"}
+      ]
+    },
+    {
+      "label": "Edit",
+      "items": [
+        {"label": "Copy", "shortcut": "<Ctrl><Shift>C"},
+        {"label": "Paste", "shortcut": "<Ctrl><Shift>V"},
+        {"label": "Paste Selection", "shortcut": "<Ctrl><Shift>Insert"},
+        {"label": "Clear Scrollback and Reset", "shortcut": "<Ctrl><Shift>K"},
+        {"label": "Find", "shortcut": "<Ctrl><Shift>F"},
+        {"label": "Find Next", "shortcut": "F3"},
+        {"label": "Find Previous", "shortcut": "<Shift>F3"},
+        {"label": "Configure or Rename Tab", "shortcut": "<Ctrl><Alt>S"}
+      ]
+    },
+    {
+      "label": "View",
+      "items": [
+        {"label": "Split View", "items": [
+          {"label": "Split View Left/Right", "shortcut": "<Ctrl>("},
+          {"label": "Split View Top/Bottom", "shortcut": "<Ctrl>)"},
+          {"label": "Split View Automatically", "shortcut": "<Ctrl>*"},
+          {"separator": true},
+          {"label": "Expand View", "shortcut": "<Ctrl><Shift>]"},
+          {"label": "Shrink View", "shortcut": "<Ctrl><Shift>["},
+          {"label": "Toggle maximize current view", "shortcut": "<Ctrl><Shift>E"},
+          {"label": "Toggle zoom-maximize current view", "shortcut": "<Ctrl><Shift>Z"},
+          {"label": "Equal size to all views", "shortcut": "<Ctrl><Shift>\\"}
+        ]},
+        {"separator": true},
+        {"label": "Select Mode", "shortcut": "<Ctrl><Shift>D"},
+        {"label": "Enlarge Font Size", "shortcut": "<Ctrl>+"},
+        {"label": "Shrink Font Size", "shortcut": "<Ctrl>-"},
+        {"label": "Reset Font Size", "shortcut": "<Ctrl><Alt>0"},
+        {"label": "Monitor for Activity", "shortcut": "<Ctrl><Shift>A"},
+        {"label": "Monitor for Silence", "shortcut": "<Ctrl><Shift>I"},
+        {"label": "Read-Only Mode", "shortcut": "<Ctrl><Shift>R"},
+        {"label": "Toggle Menubar", "shortcut": "<Ctrl><Shift>M"},
+        {"label": "Toggle Fullscreen", "shortcut": "F11"},
+        {"separator": true},
+        {"label": "Detach Current View", "shortcut": "<Ctrl><Shift>H"},
+        {"label": "Setup semantic integration (bash)", "shortcut": "<Ctrl><Alt>]"},
+        {"label": "Toggle semantic hints display", "shortcut": "<Ctrl><Alt>["},
+        {"label": "Toggle line numbers display", "shortcut": "<Ctrl><Alt>\\"}
+      ]
+    },
+    {
+      "label": "Tabs",
+      "items": [
+        {"label": "Clone Tab"},
+        {"label": "Next Tab", "shortcut": "<Shift>Right"},
+        {"label": "Next Tab", "shortcut": "<Ctrl>Page_Down"},
+        {"label": "Previous Tab", "shortcut": "<Shift>Left"},
+        {"label": "Previous Tab", "shortcut": "<Ctrl>Page_Up"},
+        {"label": "Last Used Tabs", "shortcut": "<Ctrl>Tab"},
+        {"label": "Last Used Tabs (Reverse)", "shortcut": "<Ctrl><Shift>Tab"},
+        {"label": "Move Tab Left"},
+        {"label": "Move Tab Right"},
+        {"separator": true},
+        {"label": "Switch to Tab 10", "shortcut": "<Alt>0"}
+      ]
+    },
+    {
+      "label": "Settings",
+      "items": [
+        {"label": "Manage Profiles…"},
+        {"label": "Open Menu", "shortcut": "<Shift>F10"},
+        {"label": "Activate Menu", "shortcut": "<Ctrl><Shift>F10"}
+      ]
+    },
+    {
+      "label": "Window",
+      "items": [
+        {"label": "Focus Pane Up", "shortcut": "<Ctrl><Shift>Up"},
+        {"label": "Focus Pane Down", "shortcut": "<Ctrl><Shift>Down"},
+        {"label": "Focus Pane Left", "shortcut": "<Ctrl><Shift>Left"},
+        {"label": "Focus Pane Right", "shortcut": "<Ctrl><Shift>Right"},
+        {"label": "Focus Next Terminal", "shortcut": "<Ctrl>F11"},
+        {"label": "Focus Previous Terminal", "shortcut": "<Ctrl><Shift>F11"}
+      ]
+    }
+  ]
+}

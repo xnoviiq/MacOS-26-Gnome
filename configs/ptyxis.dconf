@@ -1,0 +1,16 @@
+[/]
+cursor-shape='ibeam'
+default-profile-uuid='c5efae1d390fd4e867bf32fa6aef5e18'
+interface-style='system'
+profile-uuids=['c5efae1d390fd4e867bf32fa6aef5e18']
+use-system-font=true
+window-size=(uint32 79, uint32 19)
+
+[Profiles/c5efae1d390fd4e867bf32fa6aef5e18]
+opacity=0.84999999999999998
+palette='Pro'
+
+[Shortcuts]
+close-other-tabs='<Shift><Control>j'
+copy-clipboard='<Control>c'
+paste-clipboard='<Control>v'

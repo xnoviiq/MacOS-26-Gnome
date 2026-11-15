@@ -1,0 +1,22 @@
+.global-menu-bar,
+.global-menu-button,
+#panelLeft .panel-button {
+    -natural-hpadding: 6px !important;
+    -minimum-hpadding: 4px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    margin: 0 !important;
+}
+
+/* Replace lowercase language text with monochrome keyboard icon while keeping switcher clickable */
+#panel .keyboard-status-menu-box StLabel,
+#panel .panel-button[accessible-name*="Input"] StLabel {
+    font-size: 0px !important;
+    color: transparent !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url("resource:///org/gnome/shell/theme/icons/scalable/status/input-keyboard-symbolic.svg") !important;
+    background-size: 16px 16px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}

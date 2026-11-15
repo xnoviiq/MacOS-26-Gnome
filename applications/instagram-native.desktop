@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Instagram
+Exec=xdg-open https://www.instagram.com
+Icon=instagram
+Type=Application
+Categories=Network;SocialNetworking;
