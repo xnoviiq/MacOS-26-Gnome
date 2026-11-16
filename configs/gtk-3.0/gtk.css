@@ -112,7 +112,7 @@
 /* This stylesheet is generated, DO NOT EDIT */
 window.background.csd > dialog-host > widget > widget > box > leaflet list.navigation-sidebar {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.06), transparent 6px);
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
   box-shadow: none;
   border: none;
 }
@@ -120,7 +120,7 @@ window.background.csd > dialog-host > widget > widget > box > leaflet list.navig
 window.background.csd > dialog-host > widget > widget > box > leaflet > headerbar.titlebar.tweak-titlebar-left, window.background.csd > contents > leaflet.unfolded > box > headerbar,
 window.background.csd > widget > leaflet.unfolded > box > headerbar {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.06), transparent 6px);
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
   border: none;
 }
 
@@ -135,7 +135,7 @@ window.background.csd > widget > leaflet.unfolded > box > stack > widget > overl
 
 window.background.csd > dialog-host > widget > widget > box > leaflet > box > searchbar > revealer > box, window.background.csd > contents > leaflet.unfolded > box > searchbar > revealer > box,
 window.background.csd > widget > leaflet.unfolded > box > searchbar > revealer > box {
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
   border-color: @headerbar_darker_shade_color;
 }
 
@@ -156,12 +156,12 @@ treeview.view:selected, gridview > child:selected, flowbox > flowboxchild:select
 popover.emoji-picker emoji:disabled:focus, popover.emoji-picker emoji:disabled:hover,
 calendar > grid > label.day-number:disabled:selected, columnview.view:disabled:selected,
 treeview.view:disabled:selected, gridview > child:disabled:selected, flowbox > flowboxchild:disabled:selected, dialog-host > dialog.view sheet:disabled:selected:focus, iconview:disabled:selected:focus, .view:disabled:selected:focus {
-  color: color-mix(in srgb, #ffffff 50%, @accent_bg_color);
+  color: mix(#ffffff 5, @accent_bg_color, 0.0);
 }
 
 spinbutton > text > selection, entry > text > selection, label > selection, textview > text selection:focus, textview > text selection {
   color: @window_fg_color;
-  background-color: color-mix(in srgb, @accent_bg_color 25%, transparent);
+  background-color: alpha(@accent_bg_color 2, 0.05);
 }
 
 .linked:not(.vertical) > dropdown > box > button.combo:dir(ltr), .linked:not(.vertical) > dropdown > box > button.combo:dir(rtl), .linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl), .linked > menubutton:not(:only-child) > button {
@@ -272,7 +272,7 @@ spinbutton.vertical > button:only-child, spinbutton.vertical > text:only-child, 
 }
 
 .background, .background.view {
-  background-color: color-mix(in srgb, @window_bg_color 96%, transparent);
+  background-color: alpha(@window_bg_color 9, 0.06);
 }
 
 .background:backdrop {
@@ -321,7 +321,7 @@ textview > text {
 }
 
 textview border {
-  color: color-mix(in srgb, @view_bg_color 50%, @view_bg_color);
+  color: mix(@view_bg_color 5, @view_bg_color, 0.0);
 }
 
 textview:drop(active) {
@@ -337,8 +337,8 @@ treeview.view > rubberband, flowbox > rubberband,
 rubberband,
 gridview > rubberband {
   --accent-bg-color: @accent_bg_color;
-  border: 1px solid color-mix(in srgb, #000000 10%, @accent_bg_color);
-  background-color: alpha(color-mix(in srgb, #000000 10%, @accent_bg_color),0.25);
+  border: 1px solid mix(#000000 1, @accent_bg_color, 0.0);
+  background-color: alpha(mix(#000000 1, @accent_bg_color, 0.0),0.25);
 }
 
 flowbox > flowboxchild {
@@ -359,7 +359,7 @@ gridview > child {
 }
 
 gridview > child:selected {
-  outline-color: color-mix(in srgb, #000000 15%, @accent_bg_color);
+  outline-color: mix(#000000 1, @accent_bg_color, 0.05);
 }
 
 coverflow cover {
@@ -381,11 +381,11 @@ label.separator {
 label:disabled {
   opacity: 1;
   filter: none;
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 label:disabled selection {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 .accent {
@@ -528,12 +528,12 @@ spinbutton > text, .linked > entry:not(:only-child) {
 spinbutton > text:focus-within, .linked > entry:focus-within:not(:only-child) {
   color: @window_fg_color;
   background-color: alpha(currentColor,0.06);
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
   transition-duration: 300ms;
 }
 
 spinbutton > text:disabled, .linked > entry:disabled:not(:only-child) {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: rgba(255, 255, 255, 0.02);
 }
 
@@ -553,12 +553,12 @@ entry:hover {
 entry:focus-within {
   color: @window_fg_color;
   background-color: alpha(currentColor,0.06);
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
   transition-duration: 300ms;
 }
 
 entry:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: rgba(255, 255, 255, 0.02);
 }
 
@@ -577,7 +577,7 @@ entry.search {
 }
 
 entry > image {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
 }
 
 entry.flat:focus-within, entry.flat:backdrop, entry.flat:disabled, entry.flat:backdrop:disabled, entry.flat {
@@ -593,7 +593,7 @@ entry:focus-within > placeholder {
 
 entry.warning {
   color: #E9873A;
-  background-color: color-mix(in srgb, #E9873A 15%, transparent);
+  background-color: alpha(#E9873A 1, 0.05);
 }
 
 entry.warning image {
@@ -618,7 +618,7 @@ entry.warning text > selection {
 
 entry.error {
   color: #ED5F5D;
-  background-color: color-mix(in srgb, #ED5F5D 15%, transparent);
+  background-color: alpha(#ED5F5D 1, 0.05);
 }
 
 entry.error image {
@@ -643,7 +643,7 @@ entry.error text > selection {
 
 entry.success {
   color: #79B757;
-  background-color: color-mix(in srgb, #79B757 15%, transparent);
+  background-color: alpha(#79B757 1, 0.05);
 }
 
 entry.success image {
@@ -668,7 +668,7 @@ entry.success text > selection {
 
 entry.search-missing {
   color: #ED5F5D;
-  background-color: color-mix(in srgb, #ED5F5D 15%, transparent);
+  background-color: alpha(#ED5F5D 1, 0.05);
 }
 
 entry.search-missing image {
@@ -711,7 +711,7 @@ entry:drop(active):focus, entry:drop(active) {
 .osd entry:focus {
   color: #ffffff;
   background-color: @accent_bg_color;
-  border-color: color-mix(in srgb, black 25%, @accent_bg_color);
+  border-color: mix(black 2, @accent_bg_color, 0.05);
   border-image: none;
 }
 
@@ -814,16 +814,16 @@ editablelabel > stack > text {
 
 @keyframes needs_attention {
   from {
-    background-image: radial-gradient(farthest-side, color-mix(in srgb, #ffffff 15%, @accent_bg_color) 0%, color-mix(in srgb, #ffffff 15%, @accent_bg_color) 0%);
+    background-image: radial-gradient(farthest-side, mix(#ffffff 1, @accent_bg_color, 0.05) 0%, mix(#ffffff 1, @accent_bg_color, 0.05) 0%);
   }
   to {
-    background-image: radial-gradient(farthest-side, color-mix(in srgb, #ffffff 15%, @accent_bg_color) 95%, color-mix(in srgb, #ffffff 15%, @accent_bg_color));
+    background-image: radial-gradient(farthest-side, mix(#ffffff 1, @accent_bg_color, 0.05) 95%, mix(#ffffff 1, @accent_bg_color, 0.05));
   }
 }
 
 stacksidebar row.needs-attention > label, stackswitcher > button.needs-attention > label, stackswitcher > button.needs-attention > image {
   animation: needs_attention 150ms ease-in;
-  background-image: radial-gradient(farthest-side, color-mix(in srgb, #ffffff 15%, @accent_bg_color) 96%, color-mix(in srgb, #ffffff 15%, @accent_bg_color));
+  background-image: radial-gradient(farthest-side, mix(#ffffff 1, @accent_bg_color, 0.05) 96%, mix(#ffffff 1, @accent_bg_color, 0.05));
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
   background-position: right 3px, right 2px;
@@ -870,7 +870,7 @@ row.spin spinbutton > button.image-button.up:not(.flat):not(.raised):not(.sugges
 row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(ltr):last-child,
 row.spin spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, headerbar popover button, button {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   background-color: alpha(currentColor,0.06);
   box-shadow: none;
   border: none;
@@ -899,7 +899,7 @@ row.spin spinbutton > button.image-button.up:disabled:not(.flat):not(.raised):no
 row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(ltr):last-child,
 row.spin spinbutton > button.image-button.down:disabled:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque):dir(rtl):first-child, button:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: alpha(currentColor,0.02);
   box-shadow: none;
 }
@@ -923,7 +923,7 @@ row.spin spinbutton > button.image-button.down:checked:disabled:not(.flat):not(.
 tabbar tabbox > tab button.tab-close-button, panelstatusbar > menubutton > button,
 panelstatusbar > paneltogglebutton button, datechooser button.circular.day, .scale-popup button, popover.menu box.circular-buttons button.circular.image-button.model, popover.menu box.inline-buttons button.image-button.model, .toolbar > button, splitbutton.suggested-action > button, splitbutton.suggested-action > menubutton > button, splitbutton.destructive-action > button, splitbutton.destructive-action > menubutton > button, splitbutton.opaque > button, splitbutton.opaque > menubutton > button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.suggested-action > button, menubutton.destructive-action > button, menubutton.opaque > button, menubutton.flat > button, button.flat {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   border: none;
   background-color: transparent;
   box-shadow: none;
@@ -955,14 +955,14 @@ splitbutton.flat > menubutton > button:checked, menubutton.suggested-action > bu
 tabbar tabbox > tab button.tab-close-button:disabled, panelstatusbar > menubutton > button:disabled,
 panelstatusbar > paneltogglebutton button:disabled, datechooser button.circular.day:disabled, .scale-popup button:disabled, popover.menu box.circular-buttons button.circular.image-button.model:disabled, popover.menu box.inline-buttons button.image-button.model:disabled, .toolbar > button:disabled, splitbutton.suggested-action > button:disabled, splitbutton.suggested-action > menubutton > button:disabled, splitbutton.destructive-action > button:disabled, splitbutton.destructive-action > menubutton > button:disabled, splitbutton.opaque > button:disabled, splitbutton.opaque > menubutton > button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.suggested-action > button:disabled, menubutton.destructive-action > button:disabled, menubutton.opaque > button:disabled, menubutton.flat > button:disabled, button.flat:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: transparent;
 }
 
 tabbar tabbox > tab button.tab-close-button:checked:disabled, panelstatusbar > menubutton > button:checked:disabled,
 panelstatusbar > paneltogglebutton button:checked:disabled, datechooser button.circular.day:checked:disabled, .scale-popup button:checked:disabled, popover.menu box.circular-buttons button.circular.image-button.model:checked:disabled, popover.menu box.inline-buttons button.image-button.model:checked:disabled, .toolbar > button:checked:disabled, splitbutton.suggested-action > button:checked:disabled, splitbutton.suggested-action > menubutton > button:checked:disabled, splitbutton.destructive-action > button:checked:disabled, splitbutton.destructive-action > menubutton > button:checked:disabled, splitbutton.opaque > button:checked:disabled, splitbutton.opaque > menubutton > button:checked:disabled, splitbutton.flat > button:checked:disabled,
 splitbutton.flat > menubutton > button:checked:disabled, menubutton.suggested-action > button:checked:disabled, menubutton.destructive-action > button:checked:disabled, menubutton.opaque > button:checked:disabled, menubutton.flat > button:checked:disabled, button.flat:checked:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: alpha(currentColor,0.1);
 }
 
@@ -1010,7 +1010,7 @@ button.flat.toggle.popup {
 }
 
 button.opaque {
-  color: color-mix(in srgb, @view_bg_color 80%, @view_bg_color);
+  color: mix(@view_bg_color 8, @view_bg_color, 0.0);
   color: @window_fg_color;
 }
 
@@ -1331,11 +1331,11 @@ button.suggested-action.flat:disabled {
   background-color: transparent;
   background-image: none;
   box-shadow: none;
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 button.suggested-action:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: alpha(currentColor,0.02);
   box-shadow: none;
 }
@@ -1378,11 +1378,11 @@ button.destructive-action.flat:disabled {
   background-color: transparent;
   background-image: none;
   box-shadow: none;
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 button.destructive-action:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: alpha(currentColor,0.02);
   box-shadow: none;
 }
@@ -1445,7 +1445,7 @@ menubutton.destructive-action {
 }
 
 menubutton.opaque {
-  color: color-mix(in srgb, @view_bg_color 80%, @view_bg_color);
+  color: mix(@view_bg_color 8, @view_bg_color, 0.0);
   color: @window_fg_color;
 }
 
@@ -1584,7 +1584,7 @@ splitbutton.destructive-action {
 }
 
 splitbutton.opaque {
-  color: color-mix(in srgb, @view_bg_color 80%, @view_bg_color);
+  color: mix(@view_bg_color 8, @view_bg_color, 0.0);
   color: @window_fg_color;
 }
 
@@ -1630,7 +1630,7 @@ buttoncontent > label:dir(rtl) {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry:focus-within:not(:only-child) {
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
 }
 
 .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) {
@@ -1654,7 +1654,7 @@ buttoncontent > label:dir(rtl) {
 }
 
 .linked.vertical > entry:focus-within:not(:only-child) {
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
 }
 
 .linked.vertical > entry:drop(active):not(:only-child) {
@@ -1699,7 +1699,7 @@ modelbutton.flat:checked {
 }
 
 modelbutton.flat:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 modelbutton.flat check:last-child,
@@ -1718,7 +1718,7 @@ modelbutton.flat arrow.left, modelbutton.flat arrow.right {
   min-width: 16px;
   min-height: 16px;
   transition: none;
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   opacity: 1;
 }
 
@@ -1772,7 +1772,7 @@ button.link:disabled {
 infobar.info > revealer > box link, infobar.info:hover > revealer > box link, infobar.info:backdrop > revealer > box link, infobar.question > revealer > box link, infobar.question:hover > revealer > box link, infobar.question:backdrop > revealer > box link, infobar.warning > revealer > box link, infobar.warning:hover > revealer > box link, infobar.warning:backdrop > revealer > box link, infobar.error > revealer > box link, infobar.error:hover > revealer > box link, infobar.error:backdrop > revealer > box link, .selection-mode headerbar .subtitle:link, headerbar.selection-mode .subtitle:link,
 link:selected,
 button.link:selected {
-  color: color-mix(in srgb, #ffffff 80%, @accent_bg_color);
+  color: mix(#ffffff 8, @accent_bg_color, 0.0);
 }
 
 button.link > label {
@@ -1791,7 +1791,7 @@ spinbutton:drop(active) {
 }
 
 spinbutton:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 spinbutton:focus-within {
@@ -1805,7 +1805,7 @@ spinbutton > text {
 
 spinbutton > text:focus-within {
   outline: none;
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
 }
 
 spinbutton > text:drop(active) {
@@ -1858,7 +1858,7 @@ treeview spinbutton:not(.vertical):focus, treeview spinbutton:not(.vertical):hov
 }
 
 treeview spinbutton:not(.vertical):focus-within, row spinbutton:not(.vertical):focus-within {
-  box-shadow: inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
   transition: box-shadow 150ms cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -1955,7 +1955,7 @@ dropdown button.combo:disabled arrow,
 dropdown button.combo:backdrop arrow,
 combobox button.combo:disabled arrow,
 combobox button.combo:backdrop arrow {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   background-color: alpha(currentColor,0.06);
   box-shadow: none;
   border: none;
@@ -2180,7 +2180,7 @@ headerbar entry:focus {
   color: @headerbar_fg_color;
   background-image: none;
   background-color: alpha(currentColor,0.06);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2), inset 0 0 0 2px color-mix(in srgb, @window_bg_color 25%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2), inset 0 0 0 2px mix(@window_bg_color, mix(#ffffff, @accent_bg_color, 0.25), 0.25);
 }
 
 headerbar entry:disabled {
@@ -2205,7 +2205,7 @@ headerbar entry progress {
 headerbar entry.warning {
   color: #ffffff;
   border-color: alpha(currentColor,0.12);
-  color: color-mix(in srgb, #E9873A 60%, @headerbar_bg_color);
+  color: mix(#E9873A 6, @headerbar_bg_color, 0.0);
 }
 
 headerbar entry.warning:focus {
@@ -2221,7 +2221,7 @@ headerbar entry.warning selection {
 headerbar entry.error {
   color: #ffffff;
   border-color: alpha(currentColor,0.12);
-  color: color-mix(in srgb, #ED5F5D 60%, @headerbar_bg_color);
+  color: mix(#ED5F5D 6, @headerbar_bg_color, 0.0);
 }
 
 headerbar entry.error:focus {
@@ -2409,7 +2409,7 @@ headerbar {
 headerbar:backdrop {
   opacity: 1;
   transition: 150ms ease-out;
-  color: color-mix(in srgb, @headerbar_fg_color 70%, @headerbar_backdrop_color);
+  color: mix(@headerbar_fg_color 7, @headerbar_backdrop_color, 0.0);
   background-color: @headerbar_backdrop_color;
   border-color: @headerbar_shade_color;
   box-shadow: none;
@@ -2677,17 +2677,17 @@ headerbar windowhandle box.linked > button:checked {
 
 .selection-mode headerbar, headerbar.selection-mode {
   color: #ffffff;
-  background-color: color-mix(in srgb, #ffffff 25%, @accent_bg_color);
+  background-color: mix(#ffffff 2, @accent_bg_color, 0.05);
   box-shadow: none;
   background-image: none;
   text-shadow: none;
-  border-color: color-mix(in srgb, #000000 15%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  border-color: mix(#000000 1, color-mix(in srgb, #ffffff 25%, @accent_bg_color, 0.05));
 }
 
 .selection-mode headerbar:backdrop, headerbar.selection-mode:backdrop {
-  background-color: color-mix(in srgb, #ffffff 25%, @accent_bg_color);
+  background-color: mix(#ffffff 2, @accent_bg_color, 0.05);
   color: alpha(#ffffff,0.6);
-  border-color: color-mix(in srgb, #000000 15%, color-mix(in srgb, #ffffff 25%, @accent_bg_color));
+  border-color: mix(#000000 1, color-mix(in srgb, #ffffff 25%, @accent_bg_color, 0.05));
 }
 
 .selection-mode headerbar button, headerbar.selection-mode button {
@@ -2708,7 +2708,7 @@ headerbar windowhandle box.linked > button:checked {
 }
 
 .maximized .selection-mode headerbar, .maximized headerbar.selection-mode {
-  background-color: color-mix(in srgb, #ffffff 25%, @accent_bg_color);
+  background-color: mix(#ffffff 2, @accent_bg_color, 0.05);
 }
 
 .tiled headerbar, .tiled headerbar:backdrop, .maximized headerbar, .maximized headerbar:backdrop {
@@ -2976,7 +2976,7 @@ treeview.view acceleditor > label {
 
 columnview.view:disabled,
 treeview.view:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 columnview.view:disabled:selected,
@@ -3012,7 +3012,7 @@ treeview.view.expander {
   min-width: 16px;
   min-height: 16px;
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
 }
 
 columnview.view.expander:dir(rtl),
@@ -3032,7 +3032,7 @@ treeview.view.expander:checked {
 
 columnview.view.expander:disabled,
 treeview.view.expander:disabled {
-  color: color-mix(in srgb, @window_fg_color 35%, transparent);
+  color: alpha(@window_fg_color 3, 0.05);
 }
 
 columnview.view.progressbar,
@@ -3071,7 +3071,7 @@ treeview.view > header > button {
   min-width: 38px;
   padding: 0 6px;
   font-weight: bold;
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   background-color: transparent;
   background-image: none;
   box-shadow: none;
@@ -3098,7 +3098,7 @@ treeview.view > header > button:hover {
 
 columnview.view > header > button:disabled,
 treeview.view > header > button:disabled {
-  border-color: color-mix(in srgb, @window_bg_color 96%, transparent);
+  border-color: alpha(@window_bg_color 9, 0.06);
   background-image: none;
 }
 
@@ -3141,7 +3141,7 @@ menubar {
 }
 
 menubar:backdrop {
-  color: color-mix(in srgb, @headerbar_fg_color 70%, @headerbar_backdrop_color);
+  color: mix(@headerbar_fg_color 7, @headerbar_backdrop_color, 0.0);
 }
 
 menubar > item {
@@ -3158,7 +3158,7 @@ menubar > item:hover {
 }
 
 menubar > item:disabled {
-  color: color-mix(in srgb, @headerbar_fg_color 50%, @headerbar_bg_color);
+  color: mix(@headerbar_fg_color 5, @headerbar_bg_color, 0.0);
 }
 
 menubar > item popover.menu.background > contents {
@@ -3188,9 +3188,9 @@ popover > arrow,
 popover > contents {
   color: @window_fg_color;
   background-clip: padding-box;
-  background-color: color-mix(in srgb, @popover_bg_color 96%, transparent);
+  background-color: alpha(@popover_bg_color 9, 0.06);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px @headerbar_darker_shade_color;
-  border: 1px solid color-mix(in srgb, #ffffff 8%, color-mix(in srgb, @popover_bg_color 96%, transparent));
+  border: 1px solid mix(#ffffff, alpha(@popover_bg_color, 0.96), 0.08);
 }
 
 popover, popover:backdrop {
@@ -3312,7 +3312,7 @@ popover.menu box.circular-buttons button.circular.image-button.model:active:focu
 }
 
 popover.menu > arrow, popover.menu.background > contents {
-  background-color: color-mix(in srgb, @popover_bg_color 96%, transparent);
+  background-color: alpha(@popover_bg_color 9, 0.06);
   color: @window_fg_color;
 }
 
@@ -3381,7 +3381,7 @@ popover.menu modelbutton:hover:focus {
 popover.menu modelbutton:selected:active {
   color: #ffffff;
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: color-mix(in srgb, #000000 10%, @accent_bg_color);
+  background-color: mix(#000000 1, @accent_bg_color, 0.0);
 }
 
 popover.menu label.title {
@@ -3390,7 +3390,7 @@ popover.menu label.title {
 }
 
 notebook > header > tabs > tab {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: transparent;
   border: none;
   transition: all 150ms ease-out;
@@ -3401,7 +3401,7 @@ notebook > header > tabs > tab {
 }
 
 notebook > header > tabs > tab:hover {
-  color: color-mix(in srgb, @window_fg_color 60%, transparent);
+  color: alpha(@window_fg_color 6, 0.0);
   background-color: alpha(currentColor,0.1);
 }
 
@@ -3547,11 +3547,11 @@ notebook > header.left > tabs > arrow.down:first-child, notebook > header.right 
 }
 
 notebook > header > tabs > arrow {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 notebook > header > tabs > arrow:hover {
-  color: color-mix(in srgb, @window_fg_color 60%, transparent);
+  color: alpha(@window_fg_color 6, 0.0);
 }
 
 notebook > header > tabs > arrow:active {
@@ -3559,7 +3559,7 @@ notebook > header > tabs > arrow:active {
 }
 
 notebook > header > tabs > arrow:disabled {
-  color: color-mix(in srgb, @window_fg_color 35%, transparent);
+  color: alpha(@window_fg_color 3, 0.05);
 }
 
 notebook > header > tabs > tab button.flat,
@@ -3569,7 +3569,7 @@ notebook > header > tabs > tab button.image-button.flat {
   box-shadow: none;
   border-radius: 9999px;
   padding: 0;
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   min-height: 16px;
   min-width: 16px;
   margin-top: 4px;
@@ -3637,15 +3637,15 @@ scrollbar > range > trough > slider {
   box-shadow: none;
   outline: none;
   transition: all 200ms linear;
-  background-color: color-mix(in srgb, @window_fg_color 40%, color-mix(in srgb, @window_bg_color 96%, transparent));
+  background-color: mix(@window_fg_color 4, alpha(@window_bg_color 9, 0.06, 0.0));
 }
 
 scrollbar > range > trough > slider:hover {
-  background-color: color-mix(in srgb, @window_fg_color 30%, color-mix(in srgb, @window_bg_color 96%, transparent));
+  background-color: mix(@window_fg_color 3, alpha(@window_bg_color 9, 0.06, 0.0));
 }
 
 scrollbar > range > trough > slider:hover:active {
-  background-color: color-mix(in srgb, @window_fg_color 50%, color-mix(in srgb, @window_bg_color 96%, transparent));
+  background-color: mix(@window_fg_color 5, alpha(@window_bg_color 9, 0.06, 0.0));
 }
 
 scrollbar > range > trough > slider:disabled {
@@ -3692,7 +3692,7 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) > range > trough > sli
   margin: 0;
   min-width: 4px;
   min-height: 4px;
-  background-color: color-mix(in srgb, @window_fg_color 70%, color-mix(in srgb, @window_bg_color 96%, transparent));
+  background-color: mix(@window_fg_color 7, alpha(@window_bg_color 9, 0.06, 0.0));
   border: none;
 }
 
@@ -3817,7 +3817,7 @@ checkbutton.text-button:hover, radiobutton.text-button:hover {
 }
 
 checkbutton.text-button:disabled, radiobutton.text-button:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 checkbutton label:not(:only-child):first-child, radiobutton label:not(:only-child):first-child {
@@ -3883,7 +3883,7 @@ radio:indeterminate:active {
 check:checked:disabled, check:indeterminate:disabled,
 radio:checked:disabled,
 radio:indeterminate:disabled {
-  color: color-mix(in srgb, @window_fg_color 35%, transparent);
+  color: alpha(@window_fg_color 3, 0.05);
   background-color: alpha(currentColor,0.02);
 }
 
@@ -4761,7 +4761,7 @@ separator.spacer.vertical {
 list.content:not(.conversation-listbox) {
   border-radius: 12px;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03);
-  background-color: color-mix(in srgb, @shade_color 48%, transparent);
+  background-color: alpha(@shade_color 4, 0.08);
   border: 1px solid @shade_color;
   color: @window_fg_color;
   background-clip: border-box;
@@ -4862,7 +4862,7 @@ row.activatable:active {
 }
 
 row.activatable:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 row.activatable:disabled image {
@@ -5305,7 +5305,7 @@ list.boxed-list-separate > row.expander row.header:active, list.boxed-list-separ
 }
 
 list.boxed-list-separate > row.expander row.header:disabled, list.boxed-list-separate > row:disabled, list.boxed-list > row:disabled, list.boxed-list > row.expander row.header:disabled, row.expander list.nested > row:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 list.boxed-list-separate > row.expander row.header:disabled image, list.boxed-list-separate > row:disabled image, list.boxed-list > row:disabled image, list.boxed-list > row.expander row.header:disabled image, row.expander list.nested > row:disabled image {
@@ -5400,7 +5400,7 @@ list.boxed-list-separate > row.expander:not(:checked) row.header, list.boxed-lis
   padding: 6px;
   margin: 6px 16px 16px 16px;
   color: @window_fg_color;
-  background-color: color-mix(in srgb, @popover_bg_color 96%, transparent);
+  background-color: alpha(@popover_bg_color 9, 0.06);
   border-radius: 12px;
   border: none;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.75);
@@ -5426,7 +5426,7 @@ list.boxed-list-separate > row.expander:not(:checked) row.header, list.boxed-lis
 }
 
 .app-notification button:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: transparent;
 }
 
@@ -5441,7 +5441,7 @@ expander:dir(rtl) {
 }
 
 expander:hover {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
 }
 
 expander:checked {
@@ -5544,7 +5544,7 @@ calendar > grid > label.day-number.other-month {
 }
 
 window.dialog.message.background {
-  background-color: color-mix(in srgb, @dialog_bg_color 96%, transparent);
+  background-color: alpha(@dialog_bg_color 9, 0.06);
 }
 
 window.dialog.message .titlebar {
@@ -5655,7 +5655,7 @@ filechooserbutton:drop(active) {
 
 .sidebar {
   border: none;
-  background-color: color-mix(in srgb, @window_bg_color 96%, transparent);
+  background-color: alpha(@window_bg_color 9, 0.06);
   color: @window_fg_color;
 }
 
@@ -5744,7 +5744,7 @@ stacksidebar row.needs-attention > label {
 }
 
 .navigation-sidebar > row:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 placessidebar > viewport.frame {
@@ -6044,7 +6044,7 @@ colorswatch:disabled overlay {
 colorswatch#add-color-button {
   border-style: solid;
   border-width: 1px;
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
   background-color: alpha(currentColor,0.06);
   box-shadow: none;
   border: none;
@@ -6114,7 +6114,7 @@ colorchooser .popover.osd {
 }
 
 .content-view .tile:disabled {
-  color: color-mix(in srgb, @view_bg_color 60%, @view_bg_color);
+  color: mix(@view_bg_color 6, @view_bg_color, 0.0);
 }
 
 .osd .scale-popup button.flat {
@@ -6313,7 +6313,7 @@ statusbar {
 .nautilus-file-chooser .nautilus-list-view listview.view > row.activatable:disabled, .nautilus-window .nautilus-grid-view child.activatable:disabled,
 #NautilusFileChooser .nautilus-grid-view child.activatable:disabled,
 .nautilus-file-chooser .nautilus-grid-view child.activatable:disabled {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 .nautilus-window .nautilus-list-view listview.view > row.activatable:selected,
@@ -6613,7 +6613,7 @@ row.expander.property .nautilus-file-chooser .nautilus-grid-view child.activatab
 .nautilus-window .sidebar-pane placessidebar .navigation-sidebar:not(.view) > row:selected,
 #NautilusFileChooser .sidebar-pane placessidebar .navigation-sidebar:not(.view) > row:selected,
 .nautilus-file-chooser .sidebar-pane placessidebar .navigation-sidebar:not(.view) > row:selected {
-  background-color: color-mix(in srgb, @window_fg_color 8%, transparent);
+  background-color: alpha(@window_fg_color , 0.08);
   color: @accent_bg_color;
 }
 
@@ -6753,7 +6753,7 @@ popover.background.entry-completion treeview.view:selected {
 
 window.background.csd > contents > leaflet.unfolded > box > scrolledwindow > viewport > widget > stack > list.navigation-sidebar,
 window.background.csd > widget > leaflet.unfolded > box > scrolledwindow > viewport > widget > stack > list.navigation-sidebar {
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
 }
 
 window.background.csd > contents > leaflet.unfolded > box > scrolledwindow > viewport > widget > stack > list.navigation-sidebar > separator,
@@ -6765,7 +6765,7 @@ window.background.csd > widget > leaflet.unfolded > box > scrolledwindow > viewp
 
 window.background.csd > contents > leaflet.unfolded > box > scrolledwindow > viewport > widget > stack > box > list.navigation-sidebar,
 window.background.csd > widget > leaflet.unfolded > box > scrolledwindow > viewport > widget > stack > box > list.navigation-sidebar {
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
 }
 
 window.background.csd > contents > leaflet.unfolded > box > stack.background,
@@ -6787,11 +6787,11 @@ preferencesgroup > box button.background-preview-button, preferencesgroup > box 
 }
 
 preferencesgroup > box button.background-preview-button:hover {
-  outline-color: color-mix(in srgb, @window_fg_color 35%, transparent);
+  outline-color: alpha(@window_fg_color 3, 0.05);
 }
 
 preferencesgroup > box button.background-preview-button:active {
-  outline-color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  outline-color: alpha(@window_fg_color 8, 0.0);
 }
 
 preferencesgroup > box button.background-preview-button:checked {
@@ -6806,11 +6806,11 @@ preferencesgroup > box flowbox.background-flowbox > flowboxchild {
 }
 
 preferencesgroup > box flowbox.background-flowbox > flowboxchild:hover {
-  outline-color: color-mix(in srgb, @window_fg_color 35%, transparent);
+  outline-color: alpha(@window_fg_color 3, 0.05);
 }
 
 preferencesgroup > box flowbox.background-flowbox > flowboxchild:active {
-  outline-color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  outline-color: alpha(@window_fg_color 8, 0.0);
 }
 
 preferencesgroup > box flowbox.background-flowbox > flowboxchild:selected {
@@ -6819,13 +6819,12 @@ preferencesgroup > box flowbox.background-flowbox > flowboxchild:selected {
 }
 
 preferencesgroup > box .cutout-button {
-  background-color: color-mix(in srgb, @dialog_bg_color 96%, transparent);
+  background-color: alpha(@dialog_bg_color 9, 0.06);
 }
 
 preferencesgroup button.accent,
 preferencesgroup button.accent-button {
   box-shadow: none;
-  background: var(--accent-bg-color);
 }
 
 preferencesgroup button.accent, preferencesgroup button.accent:hover, preferencesgroup button.accent:active, preferencesgroup button.accent:checked,
@@ -6851,14 +6850,11 @@ preferencesgroup button.accent-button:checked {
 preferencesgroup button.accent:hover,
 preferencesgroup button.accent-button:hover {
   box-shadow: 0 0 0 3px alpha(currentColor,0.1);
-  background: var(--accent-bg-color);
 }
 
 preferencesgroup button.accent:checked, preferencesgroup button.accent:checked:hover,
 preferencesgroup button.accent-button:checked,
 preferencesgroup button.accent-button:checked:hover {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-bg-color) 50%, transparent);
-  background: var(--accent-bg-color);
 }
 
 preferencesgroup button.accent.blue, preferencesgroup button.accent.teal, preferencesgroup button.accent.green, preferencesgroup button.accent.yellow, preferencesgroup button.accent.orange, preferencesgroup button.accent.red, preferencesgroup button.accent.pink, preferencesgroup button.accent.purple, preferencesgroup button.accent.slate,
@@ -6871,52 +6867,42 @@ preferencesgroup button.accent-button.red,
 preferencesgroup button.accent-button.pink,
 preferencesgroup button.accent-button.purple,
 preferencesgroup button.accent-button.slate {
-  --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
 }
 
 preferencesgroup button.accent.blue,
 preferencesgroup button.accent-button.blue {
-  --accent-bg-color: var(--accent-blue);
 }
 
 preferencesgroup button.accent.teal,
 preferencesgroup button.accent-button.teal {
-  --accent-bg-color: var(--accent-teal);
 }
 
 preferencesgroup button.accent.green,
 preferencesgroup button.accent-button.green {
-  --accent-bg-color: var(--accent-green);
 }
 
 preferencesgroup button.accent.yellow,
 preferencesgroup button.accent-button.yellow {
-  --accent-bg-color: var(--accent-yellow);
 }
 
 preferencesgroup button.accent.orange,
 preferencesgroup button.accent-button.orange {
-  --accent-bg-color: var(--accent-orange);
 }
 
 preferencesgroup button.accent.red,
 preferencesgroup button.accent-button.red {
-  --accent-bg-color: var(--accent-red);
 }
 
 preferencesgroup button.accent.pink,
 preferencesgroup button.accent-button.pink {
-  --accent-bg-color: var(--accent-pink);
 }
 
 preferencesgroup button.accent.purple,
 preferencesgroup button.accent-button.purple {
-  --accent-bg-color: var(--accent-purple);
 }
 
 preferencesgroup button.accent.slate,
 preferencesgroup button.accent-button.slate {
-  --accent-bg-color: var(--accent-slate);
 }
 
 window.background > contents > toastoverlay > leaflet > box,
@@ -6933,7 +6919,7 @@ window.background > widget > toastoverlay > leaflet > box > headerbar:backdrop {
 
 window.background > contents > toastoverlay > leaflet > box + separator + box,
 window.background > widget > toastoverlay > leaflet > box + separator + box {
-  background-color: color-mix(in srgb, @sidebar_bg_color 96%, transparent);
+  background-color: alpha(@sidebar_bg_color 9, 0.06);
 }
 
 window.background > contents > toastoverlay > leaflet > box > .view,
@@ -7109,7 +7095,7 @@ menubutton.flat.popup.sources-button > button image.calendar-color-image {
 }
 
 #conditions-grid *:backdrop {
-  color: color-mix(in srgb, @window_fg_color 80%, transparent);
+  color: alpha(@window_fg_color 8, 0.0);
 }
 
 .content-view.cell {
@@ -7472,13 +7458,13 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 review-bar {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-image: none;
   background-color: alpha(currentColor,0.16);
 }
 
 .review-histogram star-image {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 .version-arrow-label {
@@ -7577,7 +7563,7 @@ clamp.status-page .iconbox {
 }
 
 clamp.status-page .icon {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   min-height: 32px;
   min-width: 32px;
 }
@@ -7856,7 +7842,7 @@ panelstatusbar > paneltogglebutton button {
 }
 
 panelwidget entry.statusbar {
-  background-color: color-mix(in srgb, @window_bg_color 96%, transparent);
+  background-color: alpha(@window_bg_color 9, 0.06);
   border-radius: 0;
   outline: none;
   box-shadow: none;
@@ -8477,7 +8463,7 @@ headerbar > windowhandle > box viewswitcher > button.toggle:hover + button, head
 
 tabbar tabbox > tab,
 tabbar tabbox > tabboxchild > tab {
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
   background-color: transparent;
   border: none;
   transition: all 150ms ease-out;
@@ -8488,7 +8474,7 @@ tabbar tabbox > tabboxchild > tab {
 
 tabbar tabbox > tab:hover,
 tabbar tabbox > tabboxchild > tab:hover {
-  color: color-mix(in srgb, @window_fg_color 60%, transparent);
+  color: alpha(@window_fg_color 6, 0.0);
   background-color: alpha(currentColor,0.1);
 }
 
@@ -9181,7 +9167,7 @@ toolbarview > .bottom-bar {
 
 toolbarview > .bottom-bar:backdrop {
   background-color: transparent;
-  color: color-mix(in srgb, @window_fg_color 45%, transparent);
+  color: alpha(@window_fg_color 4, 0.05);
 }
 
 toolbarview > .top-bar.raised {
@@ -9270,7 +9256,7 @@ floating-sheet > sheet {
 }
 
 floating-sheet > sheet.background {
-  background-color: color-mix(in srgb, @dialog_bg_color 96%, transparent);
+  background-color: alpha(@dialog_bg_color 9, 0.06);
 }
 
 bottom-sheet > sheet {
@@ -9278,7 +9264,7 @@ bottom-sheet > sheet {
 }
 
 bottom-sheet > sheet.background {
-  background-color: color-mix(in srgb, @dialog_bg_color 96%, transparent);
+  background-color: alpha(@dialog_bg_color 9, 0.06);
 }
 
 bottom-sheet > sheet > outline {
@@ -9302,7 +9288,7 @@ dialog-host > dialog.background {
 }
 
 dialog-host > dialog.background sheet {
-  background-color: color-mix(in srgb, @window_bg_color 96%, transparent);
+  background-color: alpha(@window_bg_color 9, 0.06);
   color: @window_fg_color;
 }
 
@@ -9441,27 +9427,27 @@ themeswitcher checkbutton.dark {
   background-color: #1e1e1e;
 }
 
-@define-color theme_bg_color color-mix(in srgb, @window_bg_color 96%, transparent);
+@define-color theme_bg_color alpha(@window_bg_color 9, 0.06);
 @define-color theme_fg_color @window_fg_color;
 @define-color theme_base_color @view_bg_color;
 @define-color theme_text_color currentColor;
 @define-color theme_selected_bg_color @accent_bg_color;
 @define-color theme_selected_fg_color #ffffff;
-@define-color bg_color color-mix(in srgb, @window_bg_color 96%, transparent);
+@define-color bg_color alpha(@window_bg_color 9, 0.06);
 @define-color fg_color @window_fg_color;
 @define-color base_color @view_bg_color;
 @define-color text_color currentColor;
 @define-color selected_bg_color @accent_bg_color;
 @define-color selected_fg_color #ffffff;
-@define-color insensitive_bg_color mix(color-mix(in srgb, @window_bg_color 96%, transparent),@view_bg_color,0.4);
-@define-color insensitive_fg_color color-mix(in srgb, @window_fg_color 45%, transparent);
+@define-color insensitive_bg_color mix(alpha(@window_bg_color 9, 0.06),@view_bg_color,0.4);
+@define-color insensitive_fg_color alpha(@window_fg_color 4, 0.05);
 @define-color insensitive_base_color @view_bg_color;
-@define-color theme_unfocused_bg_color color-mix(in srgb, @window_bg_color 96%, transparent);
+@define-color theme_unfocused_bg_color alpha(@window_bg_color 9, 0.06);
 @define-color theme_unfocused_fg_color @window_fg_color;
 @define-color theme_unfocused_base_color @view_bg_color;
 @define-color theme_unfocused_text_color currentColor;
 @define-color borders alpha(currentColor,0.12);
-@define-color unfocused_insensitive_color mix(@window_fg_color,color-mix(in srgb, @window_bg_color 96%, transparent),0.65);
+@define-color unfocused_insensitive_color mix(@window_fg_color,alpha(@window_bg_color 9, 0.06),0.65);
 @define-color unfocused_borders alpha(currentColor,0.12);
 @define-color warning_color #E9873A;
 @define-color error_color #ED5F5D;

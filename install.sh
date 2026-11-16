@@ -100,6 +100,10 @@ for schema_dir in ~/.local/share/gnome-shell/extensions/*/schemas; do
     [ -d "$schema_dir" ] && glib-compile-schemas "$schema_dir" 2>/dev/null || true
 done
 
+echo "==> [6.5/7] Resolving Issue #3 paths..."
+
+find ~/.config/gtk-3.0 ~/.config/d2da -type f -exec sed -i "s|__HOME__|$HOME|g" {} + 2>/dev/null || true
+
 echo "==> [7/7] [xnoviq Installer] Applying Liquid Glass Pipeline, Terminal Alpha & Dock State..."
 PRIMARY_MON=$(xrandr --listmonitors 2>/dev/null | awk 'NR==2 {print $NF}' || echo "eDP-1")
 [ -z "$PRIMARY_MON" ] && PRIMARY_MON="eDP-1"
