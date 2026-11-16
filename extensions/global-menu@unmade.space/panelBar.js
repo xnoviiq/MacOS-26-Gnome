@@ -18,5 +18,5 @@ function runStart() {
 
 export function addBarButton(role, btn, rank) {
 	const {index, hasAppName} = runStart();
-	Main.panel.addToStatusArea(role, btn, index + (hasAppName ? rank : Math.max(rank - 1, 0)), 'left');
+	Main.panel.addToStatusArea(role, btn, Math.max(index, 1) + (hasAppName ? rank : Math.max(rank - 1, 0)), 'left');
 }
