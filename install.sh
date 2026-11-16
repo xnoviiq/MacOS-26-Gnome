@@ -24,10 +24,16 @@ echo "==> [1/7] [xnoviq Installer] Backing up current dconf & installing depende
 mkdir -p ~/.config/macos26-backup
 dconf dump / > ~/.config/macos26-backup/dconf-backup-$(date +%F-%H%M).txt 2>/dev/null || true
 
-sudo apt update
-sudo apt install -y git curl wget python3 gnome-tweaks \
-    gnome-shell-extension-manager sassc libglib2.0-dev-bin \
-    gtk2-engines-murrine appmenu-gtk3-module fontconfig
+# Install dependencies only if this user is an admin; otherwise assume an
+# admin already installed them (lets it run from a non-sudo test account).
+if id -nG | grep -qwE 'sudo|admin|wheel'; then
+    sudo apt update
+    sudo apt install -y git curl wget python3 gnome-tweaks \
+        gnome-shell-extension-manager sassc libglib2.0-dev-bin \
+        gtk2-engines-murrine appmenu-gtk3-module fontconfig
+else
+    echo "    (no sudo rights: skipping apt; dependencies must already be installed)"
+fi
 
 echo "==> [2/7] [xnoviq Installer] Installing Apple SF Pro & SF Mono Font Suite..."
 mkdir -p ~/.local/share/fonts
@@ -38,8 +44,17 @@ echo "==> [3/7] [xnoviq Installer] Deploying MacTahoe-Dark-alt & WhiteSur-Dark T
 mkdir -p ~/.themes ~/.local/share/themes ~/.config/gtk-3.0 ~/.config/gtk-4.0
 cp -r "$REPO_DIR/themes/"* ~/.themes/ 2>/dev/null || true
 cp -r "$REPO_DIR/themes/"* ~/.local/share/themes/ 2>/dev/null || true
-rm -rf ~/.config/gtk-3.0/* ~/.config/gtk-4.0/*
-cp -r "$REPO_DIR/configs/gtk-3.0/"* ~/.config/gtk-3.0/ 2>/dev/null || true
+# Back up existing GTK config instead of deleting it.
+GTK_BAK=~/.config/macos26-backup/gtk-$(date +%F-%H%M)
+mkdir -p "$GTK_BAK"
+cp -a ~/.config/gtk-3.0 ~/.config/gtk-4.0 "$GTK_BAK/" 2>/dev/null || true
+rm -rf ~/.config/gtk-4.0/*
+# GTK3: copy settings.ini only. The repo's gtk-3.0/gtk.css is a libadwaita
+# (GTK4) stylesheet that GTK3 cannot parse (color-mix(), var(), undefined
+# @window_fg_color); it breaks GTK3 apps such as Firefox's dark-mode menus.
+# The repo's gtk-3.0/bookmarks points at the author's home, so it is skipped too.
+rm -f ~/.config/gtk-3.0/gtk.css
+cp "$REPO_DIR/configs/gtk-3.0/settings.ini" ~/.config/gtk-3.0/ 2>/dev/null || true
 cp -r "$REPO_DIR/configs/gtk-4.0/"* ~/.config/gtk-4.0/ 2>/dev/null || true
 
 echo "==> [4/7] [xnoviq Installer] Deploying Custom Squircle Icons, Dark Launchpad & Cursors..."
