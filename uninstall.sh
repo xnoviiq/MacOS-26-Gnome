@@ -1,28 +1,14 @@
 #!/usr/bin/env bash
-# macOS 26 Liquid Glass — Safe GNOME settings rollback
-# Engineered by xnoviq (@xnoviiq)
-
 set -e
 
-echo "=========================================="
-echo " macOS 26 Liquid Glass — Rollback"
-echo "=========================================="
-
-shopt -s nullglob
-BACKUPS=("$HOME"/.config/macos26-backup/dconf-backup-*.txt)
-
-if [ ${#BACKUPS[@]} -eq 0 ]; then
-    echo "WARNING: No GNOME settings backup found."
-    echo "Nothing was restored."
-else
-    LATEST_BAK=$(ls -t "${BACKUPS[@]}" | head -n 1)
-    dconf load / < "$LATEST_BAK"
-    echo "Restored GNOME settings from:"
-    echo "$LATEST_BAK"
+if [ "$EUID" -eq 0 ]; then
+  echo "Do not run uninstall.sh with sudo."
+  exit 1
 fi
 
-echo
-echo "Note: Installed theme, icon, font and GTK files"
-echo "are not automatically removed by this rollback."
-echo "Log out and log back in to apply restored settings."
-echo "Rollback finished."
+gnome-extensions list | xargs -r -n 1 gnome-extensions disable
+rm -rf ~/.config/gtk-3.0/gtk.css ~/.config/gtk-4.0/gtk.css ~/.config/gtk-4.0/assets
+rm -rf ~/.themes/Mac* ~/.local/share/themes/Mac* ~/.local/share/icons/Mac* ~/.icons/Mac*
+dconf reset -f /org/gnome/
+
+echo "Done. Log out and log back in for changes to fully apply."

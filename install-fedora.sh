@@ -24,7 +24,9 @@ echo "==> [1/7] [xnoviq Installer] Backing up current dconf & installing depende
 mkdir -p ~/.config/macos26-backup
 dconf dump / > ~/.config/macos26-backup/dconf-backup-$(date +%F-%H%M).txt 2>/dev/null || true
 
-sudo dnf install -y git curl wget python3 gnome-tweaks gnome-shell-extension-manager sassc glib2-devel gtk-murrine-engine fontconfig
+sudo dnf install -y git curl wget python3 gnome-tweaks gnome-extensions-app sassc glib2-devel gtk-murrine-engine fontconfig
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 2>/dev/null || true
+flatpak install -y flathub com.mattjakeman.ExtensionManager 2>/dev/null || true
 
 echo "==> [2/7] [xnoviq Installer] Installing Apple SF Pro & SF Mono Font Suite..."
 mkdir -p ~/.local/share/fonts
